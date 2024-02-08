@@ -1,0 +1,79 @@
+#Get a tkinter Ellements
+from tkinter import *
+
+#connect the root to Tk
+root = Tk()
+#Get Title on app
+root.title("Rechner".center(100))
+#get a width and height
+root.geometry("370x500")
+
+#box background
+root.configure(bg="#101a33")
+
+#all the function of the Rechner
+#code for plus
+def Plus():
+    result_plus = int(input.get()) + int(input1.get())
+    result_int.delete(0, END)
+    result_int.insert(0, result_plus)
+# code for minus
+def minus():
+    result_minus = int(input.get()) - int(input1.get())
+    result_int.delete(0, END)
+    result_int.insert(0, result_minus)
+# code for minus
+def times():
+    result_times = int(input.get()) * int(input1.get())
+    result_int.delete(0, END)
+    result_int.insert(0, result_times)
+# code for divid
+def divid():
+    result_divid = int(input.get()) / int(input1.get())
+    result_int.delete(0, END)
+    result_int.insert(0, result_divid)
+
+
+#Create a Entry Number 1 first input
+input = Entry(root,  width=16, fg="white", bg="#3cc29e", font=999, bd=0)
+input.place(x=20, y=50, width=150, height=55)
+
+#Entry text Nummer 1
+result_text = Label(root, text="Zahl 1", bg="#448fb3", font=55, fg="white" , width="12", height=1)
+result_text.place(x=37, y=30)
+
+#Create a Entry Number 2 second input
+input1 = Entry(root,  width=16, fg="white", bg="#3cc29e", font=999, bd=0)
+input1.place(x=200, y=50, width=150, height=55)
+
+#Entry text Nummer 2
+result_text = Label(root, text="Zahl 2", bg="#448fb3", font=55, fg="white" , width="12", height=1)
+result_text.place(x=217, y=30)
+
+#result text Label
+result_text = Label(root, text="Ergebnis", bg="#448fb3", font=55, fg="white" , width="27", height=2)
+result_text.place(x=61, y=350)
+
+#result Entry
+result_int = Entry(root, width=16, fg="white", bg="#3cc29e", bd=0, font=999)
+result_int.place(x=60,y=390, width=250, height=50, )
+
+# Buttons
+# plus button
+button_plus = Button(root, text="+", width=8, height=4, bg="#9e1b56", bd=0, fg="white", command=Plus)
+button_plus.place(x=25, y=160,)
+
+# minus button
+button_minus = Button(root, text="-", width=8, height=4, bg="#9e1b56", bd=0, fg="white", command=minus)
+button_minus.place(x=105, y=160,)
+
+# times button
+button_times = Button(root, text="*", width=8, height=4, bg="#9e1b56", bd=0, fg="white", command=times)
+button_times.place(x=200, y=160,)
+
+# divided button
+button_divided = Button(root, text=":", width=8, height=4, bg="#9e1b56", bd=0, fg="white", command=divid)
+button_divided.place(x=285, y=160, )
+
+#start the app
+root.mainloop()
